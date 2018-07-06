@@ -1,0 +1,32 @@
+<head>
+	<script type="text/javascript">
+		function sayHi() {
+			let obj = {
+				a: 0,
+				b: "pepe"
+			};
+			worker.postMessage({'cmd': 'start', 'msg': 'hi', 'obj': obj});
+		}
+
+		function stop(){
+			worker.postMessage({'cmd': 'stop', 'msg': 'Bye'});
+			//worker.terminate();
+		}
+
+		function unknownCmd() {
+			worker.postMessage({'cmd': 'foobard', 'msg': '???'});
+		}
+
+		var worker = new Worker('doWork.js');
+
+		worker.addEventListener('message', (e) => {
+			document.getElementById('result').textContent = e.data;
+		}, false);
+	</script>
+</head>
+<body>
+	<button onclick = 'sayHi()'>Say Hi</button>
+	<button onclick = 'unknownCmd()'>Send unknown command</button>
+	<button onclick = 'stop()'>Stop worker</button>
+	<output id = 'result'></output>
+</body>

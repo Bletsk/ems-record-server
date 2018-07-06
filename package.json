@@ -1,0 +1,22 @@
+{
+  "name": "http-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "blob": "0.0.4",
+    "body-parser": "^1.18.2",
+    "ebml": "^2.2.2",
+    "express": "^4.16.3",
+    "filereader": "^0.10.3",
+    "fluent-ffmpeg": "^2.1.2",
+    "formidable": "^1.2.1",
+    "ws": "^5.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
